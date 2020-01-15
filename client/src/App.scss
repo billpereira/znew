@@ -371,26 +371,46 @@ header {
   font-weight: 600;
 }
 .question-confirm button{
-  padding: 5px 10px;
-  background-color: rgb(109, 143, 47);
+  padding: 10px 20px;
+  background-color: #8bc53c;
   color: white;
   border: 1px solid transparent;
-  border-radius: 15px;
+  border-radius: 5px;
+  font-weight: 700;
+ text-transform:uppercase;
+ border-bottom: 4px solid #678f2f;
 }
 
 .command-area p {
   margin: 0;
 }
 .command-area{
-  height: 350px;
+  height: 380px;
+  overflow: auto;
+  padding: 10px;
 }
 
 .command-input input{
   width: 100%;
   border: transparent 1px solid;
-  color: #0f0;
+  color: #8bc53c;
   background-color: #333;
   text-transform: uppercase;
   font-weight: 700;
-  padding: 5px;;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  vertical-align: bottom;
+}
+
+.command-input button {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+form{
+  display: inline;
+  margin: 0;
+  padding: 0;
 }
