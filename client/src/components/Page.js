@@ -4,7 +4,6 @@ import {QuizzContainer} from './QuizzContainer'
 const Page = () => {
   return (
     <div className="content">
-      {/* Hello from Page */}
       <QuizzContainer />
     </div>
   );
