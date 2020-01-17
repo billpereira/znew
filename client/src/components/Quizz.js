@@ -1,37 +1,67 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+// import api from "../helpers/api";
 
-export const Quizz = () => {
+export const Quizz = ({
+  currentQuestion,
+  quizzQuestions,
+  selectedOption,
+  setSelectedOption, nextQuestion
+}) => {
+  const handleSelectedOption = changeEvent => {
+    setSelectedOption(changeEvent.target.value);
+  };
   return (
-    <div>
-      <div className="question-title">Question 1 of 3 - Display CPU</div>
-      <div className="question">
-        <p>
-          You may have heard that the
-          mainframe is a big computer, and one thing you find in a computer is a
-          processor.
-        </p>
-
-        <p>
-          Let’s start out by finding out just what the situation is with this
-          computer’s processors. To do this, we’re going to use the DISPLAY
-          command, and the DISPLAY command can be used to show us all sorts of
-          information, so we need to specify that we want the System
-          Configuration Information, even more specifically, the CPU info.
-          Putting it all together, the command we want to input looks like this:
-        </p>
-
-        <p><strong>DISPLAY M=CPU</strong></p>
-      </div>
-      <div className="answer">
-      <p>How many CPUs do we have on our LPAR?
-      </p>
-        <input type="radio" name="cpu" value="a"/>1<br/>
-        <input type="radio" name="cpu" value="b"/>3<br/>
-        <input type="radio" name="cpu" value="c"/>5
-      </div>
-      <div className="question-confirm">
-        <button>Confirm</button>
-      </div>
-    </div>
+    <>
+      {quizzQuestions ? (
+        <div>
+          <div className="question-title">
+            {`Question ${currentQuestion} of ${quizzQuestions.length} - ${
+              quizzQuestions[currentQuestion - 1].title
+            }`}
+          </div>
+          <div className="question">
+            <p>{quizzQuestions[currentQuestion - 1].description}</p>
+            <p>
+              <strong>{quizzQuestions[currentQuestion - 1].hint}</strong>
+            </p>
+          </div>
+          <form onSubmit={(e)=>e.preventDefault()}>
+            <div className="answer">
+              <p>{quizzQuestions[currentQuestion - 1].question}</p>
+              {quizzQuestions[currentQuestion - 1].options.map(option => (
+                <div
+                  key={option}
+                  className="quizz-option"
+                  style={
+                    (option === selectedOption) &
+                    (option === quizzQuestions[currentQuestion - 1].rightAnswer)
+                      ? { borderColor: "green" }
+                      : (option === selectedOption) &
+                        (option !==
+                          quizzQuestions[currentQuestion - 1].rightAnswer)
+                      ? { borderColor: "red" }
+                      : null
+                  }
+                >
+                  <input
+                    type="radio"
+                    value={option}
+                    checked={selectedOption === option}
+                    onChange={handleSelectedOption}
+                  />
+                  {option}
+                  <br />
+                </div>
+              ))}
+            </div>
+            <div className="question-confirm">
+              <button onClick={()=>nextQuestion()}>Next</button>
+            </div>
+          </form>
+        </div>
+      ) : (
+        "Loading Questions..."
+      )}
+    </>
   );
 };

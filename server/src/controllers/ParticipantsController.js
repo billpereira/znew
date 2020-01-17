@@ -20,7 +20,9 @@ module.exports = {
         lastName,
         email,
         country,
-        organization
+        organization,
+        totalExperience:0,
+        completedQuestions:[]
         //TODO userID
       })
     }

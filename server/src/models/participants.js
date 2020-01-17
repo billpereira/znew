@@ -6,6 +6,8 @@ const participantSchema = new mongoose.Schema({
   email: String,
   country: String,
   organiation: String,
+  totalExperience: Number,
+  completedQuestions: [String],
   // userID: String
 })
 

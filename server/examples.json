@@ -1,0 +1,34 @@
+{
+  "questions": [
+    {
+      "title": "DISPLAY CPU",
+      "description": "You may have heard that the mainframe is a big computer, and one thing you find in a computer is a processor. \n Lets start out by finding out just what the situation is with this computers processors. To do this, we’re going to use the DISPLAY command, and the DISPLAY command can be used to show us all sorts of information, so we need to specify that we want the System Configuration Information, even more specifically, the CPU info. Putting it all together, the command we want to input looks like this:",
+      "hint": "DISPLAY M=CPU",
+      "question": "How many CPUs do we have on our LPAR?",
+      "options": ["1","2","3"],
+      "rightAnswer": "3",
+      "experience":"10",
+      "group": "architecture"
+    },
+    {
+      "title": "DISPLAY DEVICE",
+      "description": "You may have heard that one of big advantages of mainframe is the capacity of handle I/O, and for that a machine have a bunch of I/O cards, and as we can configure every lpar inside of it with the resources as it needs, we can assign the channels as we need.\n We use this channels to connect with storage that in the mainframe is also out of the box, so use the DISPLAY DEVICE to check the channels that connect our LPAR to device 4502",
+      "hint": "DISPLAY M=DEV",
+      "question": "Which of the following CHANNELS connect us to 4502?",
+      "options": ["9B","3A","8E"],
+      "rightAnswer": "9B",
+      "experience":"10",
+      "group": "architecture"
+    },
+    {
+      "title": "Initial Program Load",
+      "description": "The operating System we are using here on the Master the Mainframe is the zOS, and the operation of boot it is called IPL(Initial Program Load). \n When we are starting our system there are 2 informations that are essential for the boot, one is where our system files are located, we call this Load Address. \n The second information is the Load Parm, where we specify some information to guide the startup, XXXXNNM1. So XXXX is the device where LOAD file is located, NN the number of LOAD we are using and M1 the level of messages we want to display.",
+      "hint": "DISPLAY IPLINFO \n DISPLAY UNIT",
+      "question": "What is the volume from Load Parm device",
+      "options": ["MIMC1","MI9AB1","MY9MC1"],
+      "rightAnswer": "MI9MC1",
+      "experience":"10",
+      "group": "operatingsystem"
+    }
+  ]
+}

@@ -6,8 +6,7 @@ const express = require("express");
 const mongoose = require('mongoose');
 const cors = require('cors');
 const routes = require('./routes');
-
-mongoose.connect(`mongodb://mongo:27017/${process.env.DATABASE_NAME}`, {
+mongoose.connect(`mongodb://mongo:27017/znew`, {
   useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true
