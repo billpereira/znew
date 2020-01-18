@@ -8,7 +8,8 @@ const quizzQuestionSchema = new mongoose.Schema({
   options: [String],
   rightAnswer: String,
   experience:String,
-  group: String
+  group: String,
+  badge: String
   // userID: String
 })
 

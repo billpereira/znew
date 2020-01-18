@@ -1,6 +1,6 @@
 import React from 'react';
 import {Header} from './components/layout/Header';
-import Page from './components/Page';
+import Page from './components/layout/Page';
 import './App.scss'
 
 const App = () =>(
