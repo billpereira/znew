@@ -31,7 +31,7 @@ export const Console = () => {
       <div className="command-area">
         {command.answer.data &&
           command.answer.data.map((item, i) => {
-            return <p key={i}>{item}</p>;
+            return <p key={i}>{item.replace(/ /g, "\u00a0")}</p>;
           })}
       </div>
       <div className="command-input">

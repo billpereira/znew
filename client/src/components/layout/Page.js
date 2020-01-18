@@ -1,5 +1,5 @@
 import React from 'react';
-import {QuizzContainer} from './QuizzContainer'
+import {QuizzContainer} from '../QuizzContainer'
 
 const Page = () => {
   return (
