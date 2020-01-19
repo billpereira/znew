@@ -2,13 +2,15 @@ import React, { useState, useEffect } from "react";
 import { QuizzNavigation } from "./QuizzNavigation";
 import { Quizz } from "./Quizz";
 import { Console } from "./Console";
+import { Link } from "react-router-dom";
 
-export const QuizzContainer = () => {
+export const QuizzContainer = ({quizzFilter=""}) => {
+  console.log(quizzFilter)
   const [hasError, setErrors] = useState(false);
   const [quizzQuestions, setQuizzQuestions] = useState();
   const [selectedOption, setSelectedOption] = useState("");
   const [currentQuestion, setCurrentQuestion] = useState(1);
-  let group = "architecture";
+  // let group = "architecture";
 
   const fetchData = async () => {
     const res = await fetch("http://localhost:5000/QuizzQuestion");
@@ -16,7 +18,7 @@ export const QuizzContainer = () => {
       .json()
       .then(res => {
         let filteredQuestions = res.filter(
-          question => question.group === group
+          question => question.group === quizzFilter.category
         );
         setQuizzQuestions(filteredQuestions);
       })
@@ -41,7 +43,7 @@ export const QuizzContainer = () => {
   }, [quizzQuestions]);
   return (
     <div className="quiz-content">
-      <h2>Part 1 - Architecture</h2>
+      <h2><Link to="/roadmap">Voltar -</Link> Part 1 - {quizzFilter.title}</h2>
       <h3>
         <span>Welcome to the mainframe!</span>
       </h3>
