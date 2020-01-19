@@ -55,8 +55,8 @@ h3 {
   font-weight: 300;
   text-align: center;
 }
-h2, .question-title{
-
+h2,
+.question-title {
   text-transform: uppercase;
 }
 
@@ -303,8 +303,10 @@ header {
   // margin-left: 5%;
   width: 90%;
   padding: 0px;
+  padding-top: 20px;
   background-color: $generic-bg;
   border-radius: 5px;
+  padding-bottom: 20px;
 }
 
 /* ==========================================================================
@@ -336,7 +338,7 @@ header {
   color: #00ff00;
   padding: 20px;
   font-weight: 700;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .navigation {
@@ -346,7 +348,7 @@ header {
   color: #999;
 }
 
-.info{
+.info {
   text-align: center;
 }
 
@@ -354,43 +356,43 @@ header {
   text-align: justify;
   padding-right: 20px;
   font-weight: 500;
-  line-height: 20px;;
+  line-height: 20px;
 }
 
-.answer input{
+.answer input {
   margin: 5px;
 }
-.answer input:last-child{
+.answer input:last-child {
   margin-bottom: 20px;
 }
 
-.question-confirm{
+.question-confirm {
   text-align: center;
 }
 .question-title {
   font-weight: 600;
 }
-.question-confirm button{
+.question-confirm button {
   padding: 10px 20px;
   background-color: #8bc53c;
   color: white;
   border: 1px solid transparent;
   border-radius: 5px;
   font-weight: 700;
- text-transform:uppercase;
- border-bottom: 4px solid #678f2f;
+  text-transform: uppercase;
+  border-bottom: 4px solid #678f2f;
 }
 
 .command-area p {
   margin: 0;
 }
-.command-area{
+.command-area {
   height: 380px;
   overflow: auto;
   padding: 10px;
 }
 
-.command-input input{
+.command-input input {
   width: 100%;
   border: transparent 1px solid;
   color: #8bc53c;
@@ -409,15 +411,105 @@ header {
   height: 0;
 }
 
-form{
+form {
   display: inline;
   margin: 0;
   padding: 0;
 }
 
-.quizz-option{
+.quizz-option {
   border: solid 2px transparent;
   margin: 5px;
   padding: 5px;
+}
+/* ==========================================================================
+   Roadmap
+   ========================================================================== */
+
+.badge-container {
+  width: 80%;
+  height: auto;
+  display: flex;
+  border: 2px solid transparent;
+  margin: 10%;
+  margin-top: 70px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ECF0F1;
+}
+
+.badge-name {
+  //used just to position
+  display: flex;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  color: white;
+  border-radius: 50%;
+  // text-align: center;
+  border: 20px solid white;
+  margin-top: -70px;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-name img {
+  width: 95px;
+  height: 95px;
+}
+
+.groups-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.challenge-button{
+  display: flex;
+  width: 200px;
+  height: 150px;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding:20px;
+
+  flex-direction: column;
+  // background-color: #D9ECFF;
+  border-radius: 10px;
+  // border: 2px solid #2C3E50;
+  filter: grayscale(0.7);
+
+}
+
+.challenge-button img{
+
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+
+}
+
+.challenge-button span{
+
+  width: 180px;
+  // height: 80px;
+  // margin-bottom: 10px;
+  text-align: center;
+  background-color: #95A5A6;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  margin-top: -50px;
+  border: 2px solid transparent;
+  font-size: 14px;
 
 }
